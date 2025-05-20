@@ -2,6 +2,7 @@ import Navbar from "./Navbar/Navbar";
 import Layout from "./Layout/Layout";
 import Herobackground from "./Herosection/Herobackground";
 import Hero from "./Herosection/Hero";
+import Productoverview from "./Shopsections/Productoverview";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
           <Hero />
         </Layout>
       </Herobackground>
+      <Layout>
+        <Productoverview />
+      </Layout>
     </>
   );
 }
