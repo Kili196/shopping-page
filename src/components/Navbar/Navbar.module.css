@@ -13,6 +13,12 @@ nav {
   display: inline-block;
   margin-right: 10px;
   font-size: 1.25rem;
+  font-weight: 500;
+  transition: 0.5s color;
+}
+
+.nav--link:hover {
+  color: rgb(95, 95, 95);
 }
 
 .nav--logo {

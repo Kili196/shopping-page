@@ -1,5 +1,6 @@
-import Navbar from "./components/Navbar/Navbar";
-import Layout from "./components/Layout/Layout";
+import Navbar from "./Navbar/Navbar";
+import Layout from "./Layout/Layout";
+
 function App() {
   return (
     <>
