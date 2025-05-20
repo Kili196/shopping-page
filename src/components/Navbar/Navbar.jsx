@@ -15,7 +15,6 @@ export default function Navbar() {
           <a> Products </a>
         </li>
       </ul>
-      <div> Image </div>
     </nav>
   );
 }

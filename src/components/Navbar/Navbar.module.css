@@ -11,9 +11,9 @@ nav {
 
 .nav--link {
   display: inline-block;
-  margin-right: 10px;
-  font-size: 1.3rem;
-  font-weight: 600;
+  margin-right: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
   transition: 0.5s color;
 }
 
