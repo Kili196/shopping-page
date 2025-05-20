@@ -1,13 +1,14 @@
 button {
   background-color: #cda349;
   outline: none;
-  border: 1px solid #cda349;
+  border: 1px solid;
   padding: 1rem;
   font-size: 1rem;
   color: white;
   border-radius: 10px;
+  transition: 0.4s ease background;
 }
 
 button:hover {
-  background-color: #c9ab6c;
+  background-color: #e0b44c;
 }
