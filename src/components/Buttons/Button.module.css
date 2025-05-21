@@ -2,13 +2,27 @@ button {
   background-color: #cda349;
   outline: none;
   border: 1px solid;
-  padding: 1rem;
-  font-size: 1rem;
   color: white;
   border-radius: 10px;
-  transition: 0.4s ease background;
+  cursor: pointer;
+  border: 2px solid #cda349;
 }
 
-button:hover {
+.shopnow--button {
+  transition: 0.4s ease background;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.shopnow--button:hover {
   background-color: #e0b44c;
+}
+
+.addcard--button {
+  background-color: #cda349;
+  padding: 0.7rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin: 0px 10px 10px 10px;
 }

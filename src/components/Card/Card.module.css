@@ -1,0 +1,43 @@
+.card {
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 10px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card--container {
+  padding: 0px 20px 5px 20px;
+}
+
+.card--headlines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.card--headlines h3,
+h4 {
+  margin: 0px;
+}
+
+.card--headlines h3 {
+  font-size: 1.5rem;
+
+  font-weight: 600;
+}
+
+.card--headlines h4 {
+  font-size: 1.4rem;
+  color: #3d3d3d;
+}
+
+.card--headlines p {
+  margin: 0px 0px 15px 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+}

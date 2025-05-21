@@ -10,7 +10,7 @@ export default function Hero() {
           Discover timeless essentials <br /> and effortless upgrades for your
           everyday look.
         </h2>
-        <ShopButton />
+        <ShopButton buttonLabel={"Shop Now!"} />
       </div>
     </section>
   );
