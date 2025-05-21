@@ -6,13 +6,13 @@ export default function Navbar() {
       <label className={styles["nav--logo"]}> LOGO </label>
       <ul className={styles["nav--links"]}>
         <li className={styles["nav--link"]}>
-          <a> Home </a>
+          <Link to={"/"}> Home </Link>
         </li>
         <li className={styles["nav--link"]}>
-          <a> About </a>
+          <Link to={"about"}> About </Link>
         </li>
         <li className={styles["nav--link"]}>
-          <a> Products </a>
+          <Link to={"products"}> Products </Link>
         </li>
       </ul>
     </nav>
