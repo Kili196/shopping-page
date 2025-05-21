@@ -3,9 +3,12 @@ import Productcard from "../Card/Productcard";
 
 export default function Productoverview({ headline }) {
   return (
-    <div className={styles["section--productoverview"]}>
+    <div className={styles["productoverview"]}>
       <h1> {headline}</h1>
-      <div>
+      <div className={styles["productoverview--products"]}>
+        <Productcard /> <Productcard /> <Productcard /> <Productcard />{" "}
+        <Productcard />
+        <Productcard /> <Productcard /> <Productcard /> <Productcard />{" "}
         <Productcard />
       </div>
     </div>
