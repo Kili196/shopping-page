@@ -6,15 +6,15 @@ button {
   border-radius: 10px;
   cursor: pointer;
   border: 2px solid #cda349;
+  transition: 0.4s ease background;
 }
 
 .shopnow--button {
-  transition: 0.4s ease background;
   font-size: 1.2rem;
   padding: 1rem;
 }
 
-.shopnow--button:hover {
+button:hover {
   background-color: #e0b44c;
 }
 
