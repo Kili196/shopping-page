@@ -14,7 +14,7 @@ export default function Initialpage() {
         </Layout>
       </Herobackground>
       <Layout>
-        <Productoverview />
+        <Productoverview headline={"Our newest products.."} />
       </Layout>
     </>
   );
