@@ -7,9 +7,7 @@ export default function Productoverview({ headline }) {
       <h1> {headline}</h1>
       <div className={styles["productoverview--products"]}>
         <Productcard /> <Productcard /> <Productcard /> <Productcard />{" "}
-        <Productcard />
-        <Productcard /> <Productcard /> <Productcard /> <Productcard />{" "}
-        <Productcard />
+        <Productcard /> <Productcard />
       </div>
     </div>
   );

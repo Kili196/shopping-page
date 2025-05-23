@@ -1,5 +1,10 @@
 import styles from "./Button.module.css";
+import { Link } from "react-router-dom";
 
 export default function ShopButton() {
-  return <button className={styles["shopnow--button"]}> Shop Now! </button>;
+  return (
+    <Link to={"shop"}>
+      <button className={styles["shopnow--button"]}> Shop Now! </button>{" "}
+    </Link>
+  );
 }
