@@ -3,11 +3,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   color: #222222;
+  padding-top: 1rem;
 }
 
 .nav--links {
-  text-decoration: none;
-  list-style: none;
+  margin-top: 0;
+  display: flex;
 }
 
 .nav--link {
