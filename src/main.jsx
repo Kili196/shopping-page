@@ -1,17 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import App from "./components/App";
 
 import "./index.css";
-
-import { createBrowserRouter } from "react-router-dom";
-import { RouterProvider } from "react-router";
-import Initialpage from "./components/routes/Initialpage";
-import Shoppage from "./components/routes/Shoppage";
-
-const routes = createBrowserRouter([
-  { path: "/", element: <Initialpage /> },
-  { path: "shop", element: <Shoppage /> },
-]);
 
 createRoot(document.getElementById("root")).render(
   /** Nav bar --> Left Logo middle side links right side shopping card
@@ -22,6 +13,6 @@ createRoot(document.getElementById("root")).render(
    */
 
   <StrictMode>
-    <RouterProvider router={routes}> </RouterProvider>
+    <App />
   </StrictMode>
 );

@@ -1,23 +1,16 @@
-import Navbar from "./Navbar/Navbar";
-import Layout from "./Layout/Layout";
-import Herobackground from "./Herosection/Herobackground";
-import Hero from "./Herosection/Hero";
-import Productoverview from "./Shopsections/Productoverview";
+import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router";
 
-function App() {
-  return (
-    <>
-      <Herobackground>
-        <Layout>
-          <Navbar />
-          <Hero />
-        </Layout>
-      </Herobackground>
-      <Layout>
-        <Productoverview />
-      </Layout>
-    </>
-  );
+import Shoppage from "./routes/Shoppage";
+import Initialpage from "./routes/Initialpage";
+import { useState } from "react";
+
+export default function App() {
+  const [products, setProducts] = useState([]);
+
+  const routes = createBrowserRouter([
+    { path: "/", element: <Initialpage /> },
+    { path: "shop", element: <Shoppage /> },
+  ]);
+  return <RouterProvider router={routes}> </RouterProvider>;
 }
-
-export default App;
