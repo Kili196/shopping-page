@@ -3,6 +3,7 @@
   margin-left: 8rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
+  align-items: end;
 }
 
 .productoverview h1 {
@@ -11,7 +12,24 @@
 
 .productoverview--products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-  gap: 2rem;
-  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.productoverview--view-more {
+  width: fit-content;
+  margin: 0 auto 1rem;
+}
+
+.productoverview--view-more a {
+  text-decoration: none;
+  list-style: none;
+  color: #222222;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: 0.5s color;
+}
+
+.productoverview--view-more a:hover {
+  color: rgb(95, 95, 95);
 }
