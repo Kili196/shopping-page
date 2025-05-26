@@ -3,15 +3,15 @@ import { RouterProvider } from "react-router";
 
 import Shoppage from "./routes/Shoppage";
 import Initialpage from "./routes/Initialpage";
-import { useState } from "react";
+import useAddProduct from "../hooks/useAddProduct";
 
 export default function App() {
-  const [products, setProducts] = useState([]);
+  const [products, addProduct] = useAddProduct([]);
 
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <Initialpage products={products} setProducts={setProducts} />,
+      element: <Initialpage addProduct={addProduct} />,
     },
     { path: "shop", element: <Shoppage /> },
   ]);

@@ -3,7 +3,7 @@ import styles from "./Card.module.css";
 import ShopButton from "../Buttons/ShopButton";
 import AddCardButton from "../Buttons/AddCardButton";
 
-export default function Productcard() {
+export default function Productcard({ addProduct }) {
   return (
     <>
       <div className={styles["card"]}>
@@ -19,7 +19,7 @@ export default function Productcard() {
             </p>
           </section>
         </div>
-        <AddCardButton />
+        <AddCardButton onClick={addProduct} />
       </div>
     </>
   );

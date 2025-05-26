@@ -1,10 +1,15 @@
 import styles from "./Button.module.css";
 import { Link } from "react-router-dom";
 
-export default function AddCardButton() {
+export default function AddCardButton({ onClick }) {
   return (
-    <Link to={"shop"} className={styles["addcard--link"]}>
-      <button className={styles["addcard--button"]}> Add to cart</button>{" "}
+    <Link className={styles["addcard--link"]}>
+      <button
+        className={styles["addcard--button"]}
+        onClick={() => onClick("a")}
+      >
+        Add to cart
+      </button>
     </Link>
   );
 }

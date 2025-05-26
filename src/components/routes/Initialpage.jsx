@@ -4,7 +4,7 @@ import Herobackground from "../Herosection/Herobackground";
 import Layout from "../Layout/Layout";
 import Productoverview from "../Shopsections/Productoverview";
 
-export default function Initialpage() {
+export default function Initialpage({ addProduct }) {
   return (
     <>
       <Herobackground>
@@ -14,7 +14,10 @@ export default function Initialpage() {
         </Layout>
       </Herobackground>
       <Layout>
-        <Productoverview headline={"Our newest products.."} />
+        <Productoverview
+          headline={"Our newest products.."}
+          addProduct={addProduct}
+        />
       </Layout>
     </>
   );
