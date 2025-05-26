@@ -9,7 +9,10 @@ export default function App() {
   const [products, setProducts] = useState([]);
 
   const routes = createBrowserRouter([
-    { path: "/", element: <Initialpage /> },
+    {
+      path: "/",
+      element: <Initialpage products={products} setProducts={setProducts} />,
+    },
     { path: "shop", element: <Shoppage /> },
   ]);
   return <RouterProvider router={routes}> </RouterProvider>;
