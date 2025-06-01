@@ -3,18 +3,18 @@ import { RouterProvider } from "react-router";
 
 import Shoppage from "./routes/Shoppage";
 import Initialpage from "./routes/Initialpage";
-import useAddProduct from "../hooks/useAddProduct";
+import useSetCart from "../hooks/useSetCart";
 import useProducts from "../hooks/useProducts";
 
 export default function App() {
-  const [products, addProduct] = useAddProduct([]);
+  const [cartProducts, setCart] = useSetCart([]);
 
   const fetchedProducts = useProducts();
 
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <Initialpage addProduct={addProduct} />,
+      element: <Initialpage setCart={setCart} />,
     },
     { path: "shop", element: <Shoppage /> },
   ]);
