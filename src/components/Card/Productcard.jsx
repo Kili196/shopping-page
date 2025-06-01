@@ -8,6 +8,7 @@ export default function Productcard({ setCart, product }) {
       <div className={styles["card"]}>
         <div className={styles["card--container"]}>
           <img src={product && product.image} className={styles} />
+
           <div className={styles[""]}>
             <section className={styles["card--headlines"]}>
               <h3> {product && product.title}</h3>
