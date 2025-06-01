@@ -9,8 +9,6 @@ import useProducts from "../hooks/useProducts";
 export default function App() {
   const [cartProducts, setCart] = useSetCart([]);
 
-  const fetchedProducts = useProducts();
-
   const routes = createBrowserRouter([
     {
       path: "/",

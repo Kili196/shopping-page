@@ -1,15 +1,16 @@
 .card {
   border: 1px solid rgb(177, 177, 177);
   border-radius: 10px;
-  max-width: 300px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .card img {
-  width: 100%;
-
+  border-radius: 10px;
   margin-bottom: 15px;
+  max-width: 250px;
 }
 
 .card--container {
@@ -28,13 +29,13 @@ h4 {
 }
 
 .card--headlines h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 
   font-weight: 600;
 }
 
 .card--headlines h4 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #3d3d3d;
 }
 
