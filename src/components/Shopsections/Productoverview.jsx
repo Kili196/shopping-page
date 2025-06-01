@@ -6,13 +6,17 @@ import useProducts from "../../hooks/useProducts";
 export default function Productoverview({ headline, setCart }) {
   const fetchedProducts = useProducts();
 
+  console.log(fetchedProducts);
+
   return (
     <>
       {" "}
       <div className={styles["productoverview"]}>
         <h1>{headline}</h1>
         <div className={styles["productoverview--products"]}>
-          <Productcard setCart={setCart} product={fetchedProducts[0]} />
+          {fetchedProducts.map((product) => {
+            return <Productcard setCart={setCart} product={product} />;
+          })}
         </div>
       </div>
       <div className={styles["productoverview--view-more"]}>
