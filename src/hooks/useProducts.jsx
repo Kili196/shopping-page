@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function useProducts() {
+  let [products, setProducts] = useState([]);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => {
@@ -10,6 +12,8 @@ export default function useProducts() {
 
         return response.json();
       })
-      .then((data) => console.log(data));
+      .then((data) => setProducts(data));
   }, []);
+
+  return products;
 }
