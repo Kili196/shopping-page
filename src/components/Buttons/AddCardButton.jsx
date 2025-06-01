@@ -1,7 +1,7 @@
 import styles from "./Button.module.css";
 import { Link } from "react-router-dom";
 
-export default function AddCardButton({ onClick }) {
+export default function AddCardButton({ onClick, product }) {
   return (
     <Link className={styles["addcard--link"]}>
       <button
