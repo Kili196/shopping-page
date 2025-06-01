@@ -6,7 +6,7 @@ export default function AddCardButton({ onClick, product }) {
     <Link className={styles["addcard--link"]}>
       <button
         className={styles["addcard--button"]}
-        onClick={() => onClick("a")}
+        onClick={() => onClick(product)}
       >
         Add to cart
       </button>

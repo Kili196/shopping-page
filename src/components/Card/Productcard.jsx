@@ -3,8 +3,6 @@ import ShopButton from "../Buttons/ShopButton";
 import AddCardButton from "../Buttons/AddCardButton";
 
 export default function Productcard({ setCart, product }) {
-  console.log(product);
-
   return (
     <>
       <div className={styles["card"]}>

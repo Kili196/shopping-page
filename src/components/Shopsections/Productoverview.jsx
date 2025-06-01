@@ -15,7 +15,13 @@ export default function Productoverview({ headline, setCart }) {
         <h1>{headline}</h1>
         <div className={styles["productoverview--products"]}>
           {fetchedProducts.map((product) => {
-            return <Productcard setCart={setCart} product={product} />;
+            return (
+              <Productcard
+                setCart={setCart}
+                product={product}
+                key={product.id}
+              />
+            );
           })}
         </div>
       </div>
