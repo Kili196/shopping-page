@@ -33,8 +33,14 @@
 .card--headlines h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 0;
-  min-height: 60px; /* reserve space for title */
+  /* or whatever fits your design */
+
+  text-overflow: ellipsis;
+  height: 3em; /* reserve space for title */
+}
+
+.card--headlines p {
+  text-overflow: hidden;
 }
 
 .card--headlines p {
