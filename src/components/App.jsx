@@ -5,11 +5,10 @@ import Shoppage from "./routes/Shoppage";
 import Initialpage from "./routes/Initialpage";
 import useSetCart from "../hooks/useSetCart";
 import useProducts from "../hooks/useProducts";
+import CheckoutPage from "./routes/CheckoutPage";
 
 export default function App() {
   const [cartProducts, setCart] = useSetCart([]);
-
-  console.log(cartProducts);
 
   const routes = createBrowserRouter([
     {
@@ -17,6 +16,7 @@ export default function App() {
       element: <Initialpage setCart={setCart} />,
     },
     { path: "shop", element: <Shoppage /> },
+    { path: "checkout", element: <CheckoutPage cart={cartProducts} /> },
   ]);
   return <RouterProvider router={routes}> </RouterProvider>;
 }

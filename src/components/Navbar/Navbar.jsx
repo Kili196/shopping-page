@@ -16,7 +16,7 @@ export default function Navbar() {
         <li className={styles["nav--link"]}>
           <Link to={"/shop"}> Products </Link>
         </li>
-        <Link to={"/cart"} className={styles["nav--link"]}>
+        <Link to={"/checkout"} className={styles["nav--link"]}>
           <MdOutlineShoppingCart size={30} color="#222222" />
         </Link>
       </ul>

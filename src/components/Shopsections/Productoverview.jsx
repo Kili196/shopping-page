@@ -25,10 +25,6 @@ export default function Productoverview({ headline, setCart }) {
           })}
         </div>
       </div>
-      <div className={styles["productoverview--view-more"]}>
-        {" "}
-        <Link to={"shop"}> View More </Link>{" "}
-      </div>
     </>
   );
 }
