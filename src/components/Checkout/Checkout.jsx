@@ -4,16 +4,16 @@ export default function Checkout() {
   return (
     <>
       <div className={styles["checkout--container"]}>
-        <div className={styles[""]}>
+        <section className={styles[""]}>
           <h1> Checkout</h1>
           <table> dsj</table>
-        </div>
+        </section>
         <div>
           <div className={styles["checkout--seperator"]}> </div>
-          <div className={styles["checkout--price-section"]}>
+          <section className={styles["checkout--price-section"]}>
             <h2> Total </h2>
-            <label> 100€</label>
-          </div>
+            <h2> 100€</h2>
+          </section>
         </div>
       </div>
     </>
