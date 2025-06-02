@@ -3,7 +3,7 @@ import Productcard from "../Card/Productcard";
 import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 
-export default function Productoverview({ headline, setCart }) {
+export default function Productoverview({ headline, addToCart }) {
   const fetchedProducts = useProducts();
 
   console.log(fetchedProducts);
@@ -17,7 +17,7 @@ export default function Productoverview({ headline, setCart }) {
           {fetchedProducts.map((product) => {
             return (
               <Productcard
-                setCart={setCart}
+                addToCart={addToCart}
                 product={product}
                 key={product.id}
               />

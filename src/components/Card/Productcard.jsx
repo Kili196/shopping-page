@@ -1,7 +1,7 @@
 import styles from "./Card.module.css";
 import AddCardButton from "../Buttons/AddCardButton";
 
-export default function Productcard({ setCart, product }) {
+export default function Productcard({ addToCart, product }) {
   return (
     <div className={styles["card"]}>
       <div className={styles["card--container"]}>
@@ -18,7 +18,7 @@ export default function Productcard({ setCart, product }) {
         </section>
       </div>
 
-      <AddCardButton onClick={setCart} product={product} />
+      <AddCardButton onClick={addToCart} product={product} />
     </div>
   );
 }

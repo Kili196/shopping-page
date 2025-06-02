@@ -4,16 +4,16 @@ import { RouterProvider } from "react-router";
 import Shoppage from "./routes/Shoppage";
 import Initialpage from "./routes/Initialpage";
 import useSetCart from "../hooks/useSetCart";
-import useProducts from "../hooks/useProducts";
+
 import CheckoutPage from "./routes/CheckoutPage";
 
 export default function App() {
-  const [cartProducts, setCart] = useSetCart([]);
+  const [cartProducts, addToCart] = useSetCart();
 
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <Initialpage setCart={setCart} />,
+      element: <Initialpage addToCart={addToCart} />,
     },
     { path: "shop", element: <Shoppage /> },
     { path: "checkout", element: <CheckoutPage cart={cartProducts} /> },

@@ -4,7 +4,7 @@ import Herobackground from "../Herosection/Herobackground";
 import Layout from "../Layout/Layout";
 import Productoverview from "../Shopsections/Productoverview";
 
-export default function Initialpage({ setCart }) {
+export default function Initialpage({ addToCart }) {
   return (
     <>
       <Herobackground>
@@ -14,7 +14,10 @@ export default function Initialpage({ setCart }) {
         </Layout>
       </Herobackground>
       <Layout>
-        <Productoverview headline={"Our newest products.."} setCart={setCart} />
+        <Productoverview
+          headline={"Our newest products.."}
+          addToCart={addToCart}
+        />
       </Layout>
     </>
   );
