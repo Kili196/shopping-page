@@ -1,3 +1,4 @@
+import CheckoutProductCard from "../Card/CheckoutProductCard";
 import styles from "./Checkout.module.css";
 
 export default function Checkout() {
@@ -6,7 +7,7 @@ export default function Checkout() {
       <div className={styles["checkout--container"]}>
         <section className={styles[""]}>
           <h1> Checkout</h1>
-          <table> dsj</table>
+          <CheckoutProductCard />
         </section>
         <div>
           <div className={styles["checkout--seperator"]}> </div>
