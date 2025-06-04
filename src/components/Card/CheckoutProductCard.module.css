@@ -1,3 +1,41 @@
 .card--container {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 2rem;
+  transition: transform 200ms ease;
+}
+
+.card--content {
+  display: flex;
+}
+
+.card--content h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.card--content label {
+  max-width: 500px;
+  color: rgb(105, 105, 105);
+}
+
+.card--container img {
+  width: 80px;
+  height: 80px;
+  align-self: center;
+  margin-right: 15px;
+}
+
+.card--container:hover {
+  background-color: #f7f7f7;
+  transform: scale(1.01);
+}
+
+.card--quantity {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-left: 10px;
 }
