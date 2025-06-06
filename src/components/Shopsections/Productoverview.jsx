@@ -6,8 +6,6 @@ import useProducts from "../../hooks/useProducts";
 export default function Productoverview({ headline, addToCart }) {
   const fetchedProducts = useProducts();
 
-  console.log(fetchedProducts);
-
   return (
     <>
       {" "}
