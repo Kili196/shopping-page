@@ -3,6 +3,18 @@ import styles from "./Checkout.module.css";
 import { useEffect } from "react";
 
 export default function Checkout({ cart }) {
+  function calculateTotalPrice() {
+    let totalPrice = 0;
+
+    Array.from(cart.values()).forEach(
+      (element) => (totalPrice += element.price * element.quantity)
+    );
+
+    return totalPrice;
+  }
+
+  console.log(calculateTotalPrice());
+
   return (
     <>
       <div className={styles["checkout--container"]}>
@@ -15,6 +27,7 @@ export default function Checkout({ cart }) {
                 productImg={product.img}
                 productDesc={product.description}
                 productQuantity={product.quantity}
+                key={product.id}
               />
             ))}
         </section>
@@ -22,7 +35,7 @@ export default function Checkout({ cart }) {
           <div className={styles["checkout--seperator"]}> </div>
           <section className={styles["checkout--price-section"]}>
             <h2> Total </h2>
-            <h2> 100€</h2>
+            <h2> {calculateTotalPrice()}€</h2>
           </section>
         </div>
       </div>
