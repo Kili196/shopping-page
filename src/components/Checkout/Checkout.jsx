@@ -1,6 +1,5 @@
 import CheckoutProductCard from "../Card/CheckoutProductCard";
 import styles from "./Checkout.module.css";
-import { useEffect } from "react";
 
 export default function Checkout({ cart }) {
   function calculateTotalPrice() {
@@ -13,15 +12,17 @@ export default function Checkout({ cart }) {
     return totalPrice;
   }
 
-  console.log(calculateTotalPrice());
+  const cartedProducts = Array.from(cart.values());
 
   return (
     <>
       <div className={styles["checkout--container"]}>
         <section className={styles[""]}>
           <h1> Checkout</h1>
-          {cart &&
-            Array.from(cart.values()).map((product) => (
+          {cartedProducts.length === 0 ? (
+            <p> No products in cart yet!</p>
+          ) : (
+            cartedProducts.map((product) => (
               <CheckoutProductCard
                 productTitle={product.title}
                 productImg={product.img}
@@ -29,7 +30,8 @@ export default function Checkout({ cart }) {
                 productQuantity={product.quantity}
                 key={product.id}
               />
-            ))}
+            ))
+          )}
         </section>
         <div>
           <div className={styles["checkout--seperator"]}> </div>
