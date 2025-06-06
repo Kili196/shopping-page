@@ -3,13 +3,6 @@ import styles from "./Checkout.module.css";
 import { useEffect } from "react";
 
 export default function Checkout({ cart }) {
-  if (cart) {
-    cart.forEach((value, key) => {
-      console.log("Product ID:", key, "Value:", value);
-    });
-  } else {
-    console.log("Cart is undefined");
-  }
   return (
     <>
       <div className={styles["checkout--container"]}>

@@ -9,13 +9,15 @@ export default function CheckoutProductCard({
   return (
     <div className={styles["card--container"]}>
       <div className={styles["card--content"]}>
-        <img src={productImg}></img>
+        <img src={productImg && productImg}></img>
         <div>
-          <h1> {productTitle}</h1>
-          <label> {productDesc} </label>
+          <h1> {productTitle && productTitle}</h1>
+          <label> {productDesc && productDesc} </label>
         </div>
       </div>
-      <div className={styles["card--quantity"]}>{productQuantity}x</div>
+      <div className={styles["card--quantity"]}>
+        {productQuantity && productQuantity}x
+      </div>
     </div>
   );
 }
