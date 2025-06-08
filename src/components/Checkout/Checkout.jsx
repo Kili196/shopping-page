@@ -19,19 +19,21 @@ export default function Checkout({ cart }) {
       <div className={styles["checkout--container"]}>
         <section className={styles[""]}>
           <h1> Checkout</h1>
-          {cartedProducts.length === 0 ? (
-            <p> No products in cart yet!</p>
-          ) : (
-            cartedProducts.map((product) => (
-              <CheckoutProductCard
-                productTitle={product.title}
-                productImg={product.img}
-                productDesc={product.description}
-                productQuantity={product.quantity}
-                key={product.id}
-              />
-            ))
-          )}
+          <section className={styles["checkout-card--container"]}>
+            {cartedProducts.length === 0 ? (
+              <p> No products in cart yet!</p>
+            ) : (
+              cartedProducts.map((product) => (
+                <CheckoutProductCard
+                  productTitle={product.title}
+                  productImg={product.img}
+                  productDesc={product.description}
+                  productQuantity={product.quantity}
+                  key={product.id}
+                />
+              ))
+            )}
+          </section>
         </section>
         <div>
           <div className={styles["checkout--seperator"]}> </div>
