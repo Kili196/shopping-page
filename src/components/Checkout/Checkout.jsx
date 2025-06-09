@@ -17,7 +17,7 @@ export default function Checkout({ cart }) {
   return (
     <>
       <div className={styles["checkout--container"]}>
-        <section className={styles[""]}>
+        <section className={styles["checkout--overview"]}>
           <h1> Checkout</h1>
           <section className={styles["checkout-card--container"]}>
             {cartedProducts.length === 0 ? (
