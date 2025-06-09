@@ -9,7 +9,7 @@ export default function Checkout({ cart }) {
       (element) => (totalPrice += element.price * element.quantity)
     );
 
-    return totalPrice;
+    return totalPrice.toFixed(2);
   }
 
   const cartedProducts = Array.from(cart.values());
