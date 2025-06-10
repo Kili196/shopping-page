@@ -1,7 +1,7 @@
 import CheckoutProductCard from "../Card/CheckoutProductCard";
 import styles from "./Checkout.module.css";
 
-export default function Checkout({ cart }) {
+export default function Checkout({ cart, decreaseQuantity }) {
   function calculateTotalPrice() {
     let totalPrice = 0;
 
@@ -30,6 +30,8 @@ export default function Checkout({ cart }) {
                   productDesc={product.description}
                   productQuantity={product.quantity}
                   key={product.id}
+                  decreaseQuantity={decreaseQuantity}
+                  product={product}
                 />
               ))
             )}

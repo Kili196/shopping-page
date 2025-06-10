@@ -5,6 +5,8 @@ export default function CheckoutProductCard({
   productTitle,
   productDesc,
   productQuantity,
+  decreaseQuantity,
+  product,
 }) {
   return (
     <div className={styles["card--container"]}>
@@ -18,6 +20,10 @@ export default function CheckoutProductCard({
       <div className={styles["card--quantity"]}>
         {productQuantity && productQuantity}x
       </div>
+      <button onClick={() => decreaseQuantity(product)}>
+        {" "}
+        DecreaseQuantity{" "}
+      </button>
     </div>
   );
 }

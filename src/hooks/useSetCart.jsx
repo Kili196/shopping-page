@@ -28,20 +28,22 @@ export default function useSetCart() {
   };
 
   const decreaseQuantity = (product) => {
-    let copyProducts = new Map(cartProducts);
+    setProducts((prevProducts) => {
+      let copyProducts = new Map(prevProducts);
 
-    let foundProduct = copyProducts.get(product.id);
+      let foundProduct = copyProducts.get(product.id);
 
-    if (foundProduct.quantity === 1) {
-      copyProducts.delete(product.id);
-    } else {
-      copyProducts.set(product.id, {
-        ...product,
-        quantity: product.quantity - 1,
-      });
-    }
+      if (foundProduct.quantity <= 1) {
+        copyProducts.delete(foundProduct.id);
+      } else {
+        copyProducts.set(foundProduct.id, {
+          ...foundProduct,
+          quantity: foundProduct.quantity - 1,
+        });
+      }
 
-    setProducts(copyProducts);
+      return copyProducts;
+    });
   };
 
   return [cartProducts, addToCart, decreaseQuantity];
