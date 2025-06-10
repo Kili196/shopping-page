@@ -27,5 +27,22 @@ export default function useSetCart() {
     setProducts(cartProducts);
   };
 
-  return [cartProducts, addToCart];
+  const decreaseQuantity = (product) => {
+    let copyProducts = new Map(cartProducts);
+
+    let foundProduct = copyProducts.get(product.id);
+
+    if (foundProduct.quantity === 1) {
+      copyProducts.delete(product.id);
+    } else {
+      copyProducts.set(product.id, {
+        ...product,
+        quantity: product.quantity - 1,
+      });
+    }
+
+    setProducts(copyProducts);
+  };
+
+  return [cartProducts, addToCart, decreaseQuantity];
 }
