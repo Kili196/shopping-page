@@ -7,24 +7,28 @@ export default function useSetCart() {
     setProducts((prevProducts) => [...prevProducts, products]); */
 
   const addToCart = (product) => {
-    if (cartProducts.has(product.id)) {
-      let currentProduct = cartProducts.get(product.id);
-      cartProducts.set(product.id, {
-        ...currentProduct,
-        quantity: currentProduct.quantity + 1,
-      });
-    } else {
-      cartProducts.set(product.id, {
-        id: product.id,
-        title: product.title,
-        price: product.price,
-        description: product.description,
-        img: product.image,
-        quantity: 1,
-      });
-    }
+    setProducts((prevProducts) => {
+      let copiedProducts = new Map(prevProducts);
 
-    setProducts(cartProducts);
+      if (copiedProducts.has(product.id)) {
+        let currentProduct = copiedProducts.get(product.id);
+        copiedProducts.set(product.id, {
+          ...currentProduct,
+          quantity: currentProduct.quantity + 1,
+        });
+      } else {
+        copiedProducts.set(product.id, {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          description: product.description,
+          img: product.image,
+          quantity: 1,
+        });
+      }
+
+      return copiedProducts;
+    });
   };
 
   const decreaseQuantity = (product) => {
