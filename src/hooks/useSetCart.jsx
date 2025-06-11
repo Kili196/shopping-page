@@ -1,23 +1,30 @@
 import { useState } from "react";
 
 export default function useSetCart() {
-  const [cartProducts, setProducts] = useState(new Map());
+  const [cartProducts, setProducts] = useState([]);
 
   /**   const setCart = (products) =>
     setProducts((prevProducts) => [...prevProducts, products]); */
 
   const addToCart = (product) => {
     setProducts((prevProducts) => {
-      let copiedProducts = new Map(prevProducts);
+      let copiedProducts = [...prevProducts];
 
-      if (copiedProducts.has(product.id)) {
-        let currentProduct = copiedProducts.get(product.id);
-        copiedProducts.set(product.id, {
-          ...currentProduct,
-          quantity: currentProduct.quantity + 1,
+      let findProduct = copiedProducts.find(
+        (element) => element.id === product.id
+      );
+
+      if (findProduct) {
+        console.log("hiii");
+        copiedProducts = copiedProducts.map((element) => {
+          if (element.id === product.id) {
+            return { ...element, quantity: element.quantity + 1 };
+          } else {
+            return element;
+          }
         });
       } else {
-        copiedProducts.set(product.id, {
+        copiedProducts.push({
           id: product.id,
           title: product.title,
           price: product.price,
@@ -33,20 +40,23 @@ export default function useSetCart() {
 
   const decreaseQuantity = (product) => {
     setProducts((prevProducts) => {
-      let copyProducts = new Map(prevProducts);
+      let copiedProducts = [...prevProducts];
 
-      let foundProduct = copyProducts.get(product.id);
+      console.log(copiedProducts);
 
-      if (foundProduct.quantity <= 1) {
-        copyProducts.delete(foundProduct.id);
+      if (product.quantity <= 1) {
+        copiedProducts = copiedProducts.filter((item) => item.id != product.id);
       } else {
-        copyProducts.set(foundProduct.id, {
-          ...foundProduct,
-          quantity: foundProduct.quantity - 1,
+        copiedProducts = copiedProducts.map((item) => {
+          if (item.id === product.id) {
+            return { ...item, quantity: item.quantity - 1 };
+          } else {
+            return { ...item };
+          }
         });
       }
 
-      return copyProducts;
+      return copiedProducts;
     });
   };
 

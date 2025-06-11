@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import CheckoutProductCard from "../Card/CheckoutProductCard";
 import styles from "./Checkout.module.css";
 

@@ -12,7 +12,7 @@ export default function App() {
   const [cartProducts, addToCart, decreaseQuantity] = useSetCart();
 
   useEffect(() => {
-    console.log(cartProducts);
+    console.log(cartProducts + "In app component");
   }, [cartProducts]);
 
   const routes = createBrowserRouter([
