@@ -5,7 +5,7 @@ import Navbar from "../Navbar/Navbar";
 
 export default function CheckoutPage({ cart, decreaseQuantity }) {
   useEffect(() => {
-    console.log(cart + "aaa");
+    console.log(cart);
   }, [cart]);
 
   return (

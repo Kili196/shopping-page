@@ -42,18 +42,22 @@ export default function useSetCart() {
     setProducts((prevProducts) => {
       let copiedProducts = [...prevProducts];
 
-      console.log(copiedProducts);
+      let foundProduct = copiedProducts.find((item) => item.id === product.id);
 
-      if (product.quantity <= 1) {
-        copiedProducts = copiedProducts.filter((item) => item.id != product.id);
-      } else {
-        copiedProducts = copiedProducts.map((item) => {
-          if (item.id === product.id) {
-            return { ...item, quantity: item.quantity - 1 };
-          } else {
-            return { ...item };
-          }
-        });
+      if (foundProduct) {
+        if (foundProduct.quantity <= 1) {
+          copiedProducts = copiedProducts.filter(
+            (item) => item.id != foundProduct.id
+          );
+        } else {
+          copiedProducts = copiedProducts.map((item) => {
+            if (item.id === foundProduct.id) {
+              return { ...item, quantity: item.quantity - 1 };
+            } else {
+              return { ...item };
+            }
+          });
+        }
       }
 
       return copiedProducts;
