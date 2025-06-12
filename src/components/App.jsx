@@ -3,25 +3,25 @@ import { RouterProvider } from "react-router";
 
 import Shoppage from "./routes/Shoppage";
 import Initialpage from "./routes/Initialpage";
-import useSetCart from "../hooks/useSetCart";
 
 import CheckoutPage from "./routes/CheckoutPage";
+import { StateProvider } from "../context/StateProvider";
 
 export default function App() {
-  const [cartProducts, addToCart, decreaseQuantity] = useSetCart();
-
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <Initialpage addToCart={addToCart} />,
+      element: <Initialpage />,
     },
     { path: "shop", element: <Shoppage /> },
     {
       path: "checkout",
-      element: (
-        <CheckoutPage cart={cartProducts} decreaseQuantity={decreaseQuantity} />
-      ),
+      element: <CheckoutPage />,
     },
   ]);
-  return <RouterProvider router={routes}> </RouterProvider>;
+  return (
+    <StateProvider>
+      <RouterProvider router={routes}> </RouterProvider>{" "}
+    </StateProvider>
+  );
 }

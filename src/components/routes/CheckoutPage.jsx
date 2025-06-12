@@ -1,17 +1,13 @@
-import { useEffect } from "react";
 import Checkout from "../Checkout/Checkout";
 import Layout from "../Layout/Layout";
 import Navbar from "../Navbar/Navbar";
+import StateContext from "../../context/StateProvider";
 
-export default function CheckoutPage({ cart, decreaseQuantity }) {
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
+export default function CheckoutPage() {
   return (
     <Layout>
       <Navbar />
-      <Checkout cart={cart} decreaseQuantity={decreaseQuantity} />
+      <Checkout />
     </Layout>
   );
 }

@@ -1,18 +1,19 @@
+import { useContext } from "react";
 import CheckoutProductCard from "../Card/CheckoutProductCard";
 import styles from "./Checkout.module.css";
+import StateContext from "../../context/StateProvider";
 
-export default function Checkout({ cart, decreaseQuantity }) {
+export default function Checkout() {
+  const { cartProducts, decreaseQuantity } = useContext(StateContext);
   function calculateTotalPrice() {
     let totalPrice = 0;
 
-    Array.from(cart.values()).forEach(
+    Array.from(cartProducts.values()).forEach(
       (element) => (totalPrice += element.price * element.quantity)
     );
 
     return totalPrice.toFixed(2);
   }
-
-  const cartedProducts = Array.from(cart.values());
 
   return (
     <>
@@ -20,10 +21,10 @@ export default function Checkout({ cart, decreaseQuantity }) {
         <section className={styles["checkout--overview"]}>
           <h1> Checkout</h1>
           <section className={styles["checkout-card--container"]}>
-            {cartedProducts.length === 0 ? (
+            {cartProducts.length === 0 ? (
               <p> No products in cart yet!</p>
             ) : (
-              cartedProducts.map((product) => (
+              cartProducts.map((product) => (
                 <CheckoutProductCard
                   productTitle={product.title}
                   productImg={product.img}
