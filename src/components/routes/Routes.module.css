@@ -1,0 +1,57 @@
+.errorpage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.errorpage-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorpage-code {
+  font-size: 3rem;
+  color: #cda349;
+  font-weight: 700;
+}
+
+.errorpage-message {
+  font-size: 1.8rem;
+}
+
+.error-link {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+svg {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  opacity: 0.7;
+  pointer-events: none; /* Ensure they're not clickable */
+}
+
+.svg-1 {
+  top: -500px;
+  right: -50px;
+}
+.svg-2 {
+  bottom: -600px;
+  right: 0;
+}
+
+.svg-3 {
+  left: -400px;
+}
+
+.svg-4 {
+  left: 50px;
+  top: -400px;
+}

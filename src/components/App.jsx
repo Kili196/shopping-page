@@ -6,6 +6,7 @@ import Initialpage from "./routes/Initialpage";
 
 import CheckoutPage from "./routes/CheckoutPage";
 import { StateProvider } from "../context/StateProvider";
+import ErrorPage from "./routes/ErrorPage";
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -17,6 +18,10 @@ export default function App() {
     {
       path: "checkout",
       element: <CheckoutPage />,
+    },
+    {
+      path: "*",
+      element: <ErrorPage />,
     },
   ]);
   return (
