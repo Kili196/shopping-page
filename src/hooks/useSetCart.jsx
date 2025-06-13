@@ -3,9 +3,6 @@ import { useState } from "react";
 export default function useSetCart() {
   const [cartProducts, setProducts] = useState([]);
 
-  /**   const setCart = (products) =>
-    setProducts((prevProducts) => [...prevProducts, products]); */
-
   const addToCart = (product) => {
     setProducts((prevProducts) => {
       let copiedProducts = [...prevProducts];
@@ -15,7 +12,6 @@ export default function useSetCart() {
       );
 
       if (findProduct) {
-        console.log("hiii");
         copiedProducts = copiedProducts.map((element) => {
           if (element.id === product.id) {
             return { ...element, quantity: element.quantity + 1 };

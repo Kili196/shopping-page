@@ -1,4 +1,5 @@
 import styles from "./CheckoutProductCard.module.css";
+import { MdDelete } from "react-icons/md";
 
 export default function CheckoutProductCard({
   productImg,
@@ -18,12 +19,12 @@ export default function CheckoutProductCard({
         </div>
       </div>
       <div className={styles["card--quantity"]}>
-        {productQuantity && productQuantity}x
+        <label>{productQuantity && productQuantity}x</label>
+        <button onClick={() => decreaseQuantity(product)}>
+          {" "}
+          <MdDelete size={20} />{" "}
+        </button>
       </div>
-      <button onClick={() => decreaseQuantity(product)}>
-        {" "}
-        DecreaseQuantity{" "}
-      </button>
     </div>
   );
 }

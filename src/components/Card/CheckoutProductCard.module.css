@@ -39,4 +39,6 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-left: 10px;
+  display: flex;
+  gap: 20px;
 }
